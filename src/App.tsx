@@ -1,10 +1,11 @@
 import "./App.css";
+import Pages from "./components/layout/pages/Pages";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Vara-Bjertorp GK</h1>
-    </div>
+    <>
+      <Pages />
+    </>
   );
 }
 
