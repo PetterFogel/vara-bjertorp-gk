@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import BookTeeTime from "../../routes/book-tee-time/BookTeeTime";
 import Contest from "../../routes/contest/Contest";

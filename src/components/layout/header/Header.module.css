@@ -1,0 +1,41 @@
+.header {
+  background: #273236;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+  color: #fff;
+  padding: 0rem 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.logoHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.burgerMenu {
+  cursor: pointer;
+}
+
+.burgerMenu div {
+  width: 2.5rem;
+  height: 0.2rem;
+  background: #fff;
+  margin: 0.4rem 0rem;
+}
