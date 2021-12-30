@@ -1,5 +1,9 @@
 .memberContainer {
     padding: 7% 2.2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 .image {
@@ -13,6 +17,7 @@
     align-items: center;
     height: 75vh;
     width: 100%;
+    margin-bottom: 3rem;
 }
 
 .title {
@@ -21,8 +26,45 @@
     text-align: center;
 }
 
+.infoContainer{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 .paragraph {
     color: #fff;
-    text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.boldText {
+    font-weight: bold;
+    color: #fff;
+}
+
+.link {
+    color: #1ead74;
+    text-decoration: none;
+}
+
+.list {
+    color: #1ead74;
+    text-decoration: underline;
+    margin: 0rem 0rem 5rem 1rem;
+}
+
+.optionContainer {
+  margin: 3rem auto;
+  width: 80%;
+}
+
+.optionBox {
+    border: 1px solid #ffff;
+    color: #ffff;
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
