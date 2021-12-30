@@ -1,5 +1,4 @@
 .header {
-  background: #273236;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +9,14 @@
   top: 0;
   right: 0;
   left: 0;
+}
+
+.colorBackground {
+  background: #273236;
+}
+
+.transparentBackground {
+  background: transparent;
 }
 
 .logoHolder {
