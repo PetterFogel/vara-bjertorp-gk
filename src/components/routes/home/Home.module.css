@@ -1,0 +1,40 @@
+.section {
+}
+
+.introContainer {
+  background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
+    url("../../../assets/DJI_0168_sign.jpg");
+  background-size: cover;
+  object-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.homeTitle {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.7rem 2.5rem;
+  background: #1ead74;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.memberTag {
+  margin-top: 1rem;
+  color: #fff;
+}
+
+.homeContainer {
+  padding: 10% 10%;
+}
