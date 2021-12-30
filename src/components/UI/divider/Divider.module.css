@@ -1,0 +1,19 @@
+.dividerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.dividerBar {
+  flex: 1;
+  height: 2px;
+  background: #fff;
+}
+
+.dividerTitle {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0rem 6%;
+  font-weight: 400;
+}
