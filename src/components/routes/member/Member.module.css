@@ -1,0 +1,28 @@
+.memberContainer {
+    padding: 7% 2.2%;
+}
+
+.image {
+    background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
+    url("../../../assets/DJI_0177_sign.jpg");
+    background-size: cover;
+    object-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    width: 100%;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.paragraph {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+}
