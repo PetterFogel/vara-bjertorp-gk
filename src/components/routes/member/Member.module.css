@@ -75,4 +75,34 @@
     width: 25%;
     display: flex;
     justify-content: center;
+    text-align: center;
+}
+
+
+@media (max-width:770px) {
+
+    .image {
+        background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
+        url("../../../assets/DJI_0177_sign.jpg");
+        background-size: cover;
+        object-position: center;
+        height: 50vh;
+    }
+
+    .infoContainer{
+        width: 90%;
+    }
+
+    .paragraph {
+        font-size: .8rem;
+    }
+    
+    .boldText {
+        font-size: .8rem;
+    }
+
+    .optionContainer {
+        margin: 1rem auto;
+        width: 90%;
+    }
 }
