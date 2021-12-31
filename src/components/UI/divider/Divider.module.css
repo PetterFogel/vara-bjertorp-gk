@@ -16,4 +16,23 @@
   color: #fff;
   margin: 0rem 6%;
   font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width:550px) {
+
+  .dividerTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width:375px) {
+
+  .dividerTitle {
+    font-size: 1.6rem;
+  }
+
+  .dividerBar {
+    display: none;
+  }
 }
