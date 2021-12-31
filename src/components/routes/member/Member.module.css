@@ -35,13 +35,15 @@
 
 .paragraph {
     color: #fff;
-    font-size: 1rem;
-    font-weight: normal;
+    font-weight: 200;
+    line-height: 1.6;
 }
 
 .boldText {
-    font-weight: bold;
+    font-weight: bolder;
     color: #fff;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 .link {
@@ -63,8 +65,14 @@
 .optionBox {
     border: 1px solid #ffff;
     color: #ffff;
-    padding: 1rem .5rem;
+    padding: 1rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.optionBlock {
+    width: 25%;
+    display: flex;
+    justify-content: center;
 }
