@@ -64,102 +64,102 @@ const Member: FC = () => {
         <div className={classes.optionContainer}>
           <div className={classes.optionBox}>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>Medlemskapstyp</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>Medlemskapstyp</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>Spelavgift</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>Spelavgift</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>Medlemsavgift</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>Medlemsavgift</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>Totalt</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>Totalt</p>
             </div>
           </div>
           <div className={classes.optionBox}>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>
                 Fullvärdig ej lån {">"} 25 år*
               </p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>5 000 kr</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>5 000 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>595 kr</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>595 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>5 595 kr*</p>
-            </div>
-          </div>
-          <div className={classes.optionBox}>
-            <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>22 - 24 år*</p>
-            </div>
-            <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>3 605 kr</p>
-            </div>
-            <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>595 kr</p>
-            </div>
-            <div className={classes.optionBlock}>
-              <p className={classes.boldText}>4 200 kr*</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>5 595 kr*</p>
             </div>
           </div>
           <div className={classes.optionBox}>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>17 - 21 år*</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>22 - 24 år*</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>2 350 kr</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>3 605 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>250 kr</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>595 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>2 6000 kr*</p>
-            </div>
-          </div>
-          <div className={classes.optionBox}>
-            <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>13 - 16 år</p>
-            </div>
-            <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>1 050 kr</p>
-            </div>
-            <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>250 kr</p>
-            </div>
-            <div className={classes.optionBlock}>
-              <p className={classes.boldText}>1 3000 kr</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>4 200 kr*</p>
             </div>
           </div>
           <div className={classes.optionBox}>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>0 - 12 år</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>17 - 21 år*</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>550 kr</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>2 350 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>250 kr</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>250 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>800 kr</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>2 6000 kr*</p>
             </div>
           </div>
           <div className={classes.optionBox}>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>Stödmedlem</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>13 - 16 år</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}></p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>1 050 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.paragraph}>600 kr</p>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>250 kr</p>
             </div>
             <div className={classes.optionBlock}>
-              <p className={classes.boldText}>600 kr</p>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>1 3000 kr</p>
+            </div>
+          </div>
+          <div className={classes.optionBox}>
+            <div className={classes.optionBlock}>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>0 - 12 år</p>
+            </div>
+            <div className={classes.optionBlock}>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>550 kr</p>
+            </div>
+            <div className={classes.optionBlock}>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>250 kr</p>
+            </div>
+            <div className={classes.optionBlock}>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>800 kr</p>
+            </div>
+          </div>
+          <div className={classes.optionBox}>
+            <div className={classes.optionBlock}>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>Stödmedlem</p>
+            </div>
+            <div className={classes.optionBlock}>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}></p>
+            </div>
+            <div className={classes.optionBlock}>
+              <p className={classes.paragraph} id={classes.optionContainerparagraph}>600 kr</p>
+            </div>
+            <div className={classes.optionBlock}>
+              <p className={classes.boldText} id={classes.optionContainerBoldText}>600 kr</p>
             </div>
           </div>
         </div>

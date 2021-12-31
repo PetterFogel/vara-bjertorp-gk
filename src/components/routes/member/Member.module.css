@@ -69,6 +69,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .optionBlock {
@@ -79,7 +80,7 @@
 }
 
 
-@media (max-width:770px) {
+@media (max-width:1024px) {
 
     .image {
         background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
@@ -87,6 +88,11 @@
         background-size: cover;
         object-position: center;
         height: 50vh;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        margin-top: 4.5rem;
     }
 
     .infoContainer{
@@ -101,8 +107,39 @@
         font-size: .8rem;
     }
 
+    .optionBox {
+        height: 4rem;
+        padding: 1rem 1rem;
+    }
+
     .optionContainer {
         margin: 1rem auto;
         width: 90%;
+    }
+}
+
+
+@media (max-width:500px) {
+
+    .image {
+        height: 20vh;
+        background: none;
+        margin-bottom: 0rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .optionContainer {
+        width: 95%;
+    }
+
+    #optionContainerBoldText {
+        font-size: .6rem;
+    }
+
+    #optionContainerparagraph {
+        font-size: .6rem;
     }
 }
