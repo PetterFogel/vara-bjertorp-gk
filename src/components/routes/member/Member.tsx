@@ -20,6 +20,7 @@ const Member: FC = () => {
               href="tel:+0512-20261"
               target="_blank"
               rel="noopener noreferrer"
+              type="phone"
               className={classes.link}
             >
               0512-20261
@@ -28,6 +29,7 @@ const Member: FC = () => {
             <a
               href="mailto: info@vara-bjertorpgk.se"
               target="_blank"
+              type="mail"
               rel="noopener noreferrer"
               className={classes.link}
             >
@@ -49,12 +51,12 @@ const Member: FC = () => {
           <br />
           <ul className={classes.list}>
             <li>
-              <a href="#" className={classes.link}>
+              <a href="''" className={classes.link}>
                 Se våra årsavgifter
               </a>
             </li>
             <li>
-              <a href="#" className={classes.link}>
+              <a href="''" className={classes.link}>
                 Frågor? Kontakta vårt kansli
               </a>
             </li>
