@@ -1,5 +1,5 @@
 .contestContainer {
-    padding: 7% 0%;
+    padding: 7% 2.5%;
     display: flex;
     flex-direction: column;
     justify-content: center;   
@@ -48,6 +48,11 @@
 
 .contestContainer {
     margin: 3rem auto;
+    width: 100%;
+}
+
+.contestTableContainer {
+    margin: 5rem auto;
     width: 80%;
 }
 

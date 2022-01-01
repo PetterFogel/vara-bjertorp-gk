@@ -28,7 +28,7 @@ const Contest: FC = () => {
         </div>
       </div>
       <Divider title={"Kommande Tävlingar"}></Divider>
-      <div className={classes.contestContainer}>
+      <div className={classes.contestTableContainer}>
         <div className={classes.contestBox}>
           <div className={classes.contestBlockStart}>
             <p
