@@ -63,13 +63,17 @@
 }
 
 .optionBox {
-    border: 1px solid #ffff;
+    border: 3px solid #ffff;
+    border-bottom: none;
     color: #ffff;
     padding: 1rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+.optionBox:last-child {
+    border-bottom: 3px solid #ffff;
 }
 
 .optionBlock {
@@ -133,6 +137,14 @@
 
     .optionContainer {
         width: 95%;
+    }
+
+    .optionBox {
+        border: 1px solid #ffff;
+        border-bottom: none;
+    }
+    .optionBox:last-child {
+        border-bottom: 1px solid #ffff;
     }
 
     #optionContainerBoldText {

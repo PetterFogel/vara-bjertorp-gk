@@ -1,9 +1,8 @@
 .contestContainer {
-    padding: 7% 2.2%;
+    padding: 7% 0%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
+    justify-content: center;   
 }
 
 .image {
@@ -27,7 +26,7 @@
 }
 
 .infoContainer{
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -38,4 +37,58 @@
     font-weight: 200;
     line-height: 1.6;
     text-align: center;
+}
+
+.boldText {
+    font-weight: bolder;
+    color: #fff;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.contestContainer {
+    margin: 3rem auto;
+    width: 80%;
+}
+
+.contestBox {
+    border: 3px solid #ffff;
+    border-bottom: none;
+    color: #ffff;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.contestBox:last-child {
+    border-bottom: 3px solid #ffff;
+}
+
+.contestBlockStart {
+    text-align: center;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contestBlockMiddleStart {
+    text-align: center;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contestBlockMiddleEnd {
+    text-align: center;
+    width: 15%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contestBlockEnd { 
+    text-align: center;
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
 }
