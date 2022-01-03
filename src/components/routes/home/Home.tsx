@@ -10,7 +10,9 @@ const Home: FC = () => {
         <h1 className={classes.homeTitle}>
           Varmt Välkommna till oss på <br /> Vara-Bjertorp GK
         </h1>
-        <button className={classes.btn}>BOKA TID</button>
+        <Link to="/boka-starttid">
+          <button className={classes.btn}>BOKA TID</button>
+        </Link>
         <Link to="/medlem" className={classes.memberTag}>
           Inte medlem? Bli medlem här.
         </Link>
