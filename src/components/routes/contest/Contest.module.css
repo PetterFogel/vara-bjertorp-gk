@@ -1,14 +1,13 @@
-.memberContainer {
-    padding: 7% 2.2%;
+.contestContainer {
+    padding: 7% 2.5%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
+    justify-content: center;   
 }
 
 .image {
     background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
-    url("../../../assets/DJI_0177_sign.jpg");
+    url("../../../assets/slottet-golfbana.jpg");
     background-size: cover;
     object-position: center;
     display: flex;
@@ -27,7 +26,7 @@
 }
 
 .infoContainer{
-    width: 60%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -37,6 +36,7 @@
     color: #fff;
     font-weight: 200;
     line-height: 1.6;
+    text-align: center;
 }
 
 .boldText {
@@ -46,23 +46,17 @@
     font-size: 1rem;
 }
 
-.link {
-    color: #1ead74;
-    text-decoration: none;
+.contestContainer {
+    margin: 3rem auto;
+    width: 100%;
 }
 
-.list {
-    color: #1ead74;
-    text-decoration: underline;
-    margin: 0rem 0rem 5rem 1rem;
+.contestTableContainer {
+    margin: 5rem auto;
+    width: 80%;
 }
 
-.optionContainer {
-  margin: 3rem auto;
-  width: 80%;
-}
-
-.optionBox {
+.contestBox {
     border: 3px solid #ffff;
     border-bottom: none;
     color: #ffff;
@@ -72,23 +66,43 @@
     justify-content: space-between;
     align-items: center;
 }
-.optionBox:last-child {
+.contestBox:last-child {
     border-bottom: 3px solid #ffff;
 }
 
-.optionBlock {
-    width: 25%;
-    display: flex;
-    justify-content: center;
+.contestBlockStart {
     text-align: center;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
 }
 
+.contestBlockMiddleStart {
+    text-align: center;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contestBlockMiddleEnd {
+    text-align: center;
+    width: 15%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contestBlockEnd { 
+    text-align: center;
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+}
 
 @media (max-width:1024px) {
 
     .image {
         background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
-        url("../../../assets/DJI_0177_sign.jpg");
+        url("../../../assets/slottet-golfbana.jpg");
         background-size: cover;
         object-position: center;
         height: 50vh;
@@ -96,7 +110,7 @@
 
     .title {
         font-size: 2.5rem;
-        margin-top: 4.5rem;
+        margin-top: 2.5rem;
     }
 
     .infoContainer{
@@ -111,12 +125,12 @@
         font-size: .8rem;
     }
 
-    .optionBox {
+    .contestBox {
         height: 4rem;
         padding: 1rem 1rem;
     }
 
-    .optionContainer {
+    .contestTableContainer {
         margin: 1rem auto;
         width: 90%;
     }
@@ -135,15 +149,15 @@
         font-size: 1.6rem;
     }
 
-    .optionContainer {
+    .contestTableContainer {
         width: 95%;
     }
 
-    .optionBox {
+    .contestBox {
         border: 1px solid #ffff;
         border-bottom: none;
     }
-    .optionBox:last-child {
+    .contestBox:last-child {
         border-bottom: 1px solid #ffff;
     }
 
