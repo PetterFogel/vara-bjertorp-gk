@@ -104,10 +104,11 @@
     margin: 5rem 3rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 0rem;
   }
 
   .boxContainer div {
+    margin-bottom: 3rem;
     height: 20rem;
   }
 }
@@ -167,5 +168,11 @@
 
   .boxContainer {
     margin: 5rem 0rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .homeTitle {
+    font-size: 1.5rem;
   }
 }
