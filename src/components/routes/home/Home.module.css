@@ -2,7 +2,7 @@
   background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
     url("../../../assets/DJI_0168_sign.jpg");
   background-size: cover;
-  object-position: center;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,4 +87,85 @@
   background: linear-gradient(rgba(39, 50, 54, 0.5), rgba(39, 50, 54, 0.5));
   color: #fff;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .boxContainer div {
+    height: 15rem;
+  }
+
+  .boxBtn {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .boxContainer {
+    margin: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .boxContainer div {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeTitle {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+  }
+
+  .memberTag {
+    font-size: 0.8rem;
+  }
+
+  .homeContainer {
+    padding: 3rem 2rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+
+  .boxContainer div {
+    height: 18rem;
+  }
+
+  .boxContainer {
+    margin: 5rem 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .homeTitle {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    padding: 0.4rem 1.7rem;
+    font-size: 0.7rem;
+  }
+
+  .memberTag {
+    display: none;
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
+
+  .boxContainer div {
+    height: 18rem;
+  }
+
+  .boxContainer {
+    margin: 5rem 0rem;
+  }
 }
