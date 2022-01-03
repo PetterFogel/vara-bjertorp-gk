@@ -36,3 +36,9 @@
   align-items: center;
   list-style: none;
 }
+
+@media (max-width: 768px) {
+  .closeIcon {
+    font-size: 3.5rem;
+  }
+}
