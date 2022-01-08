@@ -1,0 +1,60 @@
+.newsContainer {
+    padding: 7% 2.2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image {
+    background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
+    url("../../../assets/cut-castle.jpg");
+    background-size: cover;
+    object-position: center;
+    background-position-y: center;
+    background-position-x: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.mappedValuesContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lastPostContainer {
+    margin-right: 3rem;
+}
+
+.oldPostContainer {
+    width: 90%;
+}
+
+.newsTitle {
+    color: white;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.newsDate {
+    color: white;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.newsContent {
+    color: white;
+    font-size: 1.1rem;
+    text-align: left;
+}
