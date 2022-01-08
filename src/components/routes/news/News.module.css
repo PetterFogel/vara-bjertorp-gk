@@ -69,8 +69,7 @@
 
 .newsComponentWithMargin {
   margin-bottom: 0;
-  margin: 0 1rem;
-  width: 33%;
+  width: 100%;
 }
 
 .oldNewsContainer {

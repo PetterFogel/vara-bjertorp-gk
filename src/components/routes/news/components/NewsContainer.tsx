@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
+import { Modal } from "../../../UI/modal/Modal";
 import { SingleNews } from "../assets/types";
 import classes from "../News.module.css";
 
@@ -12,7 +13,7 @@ interface NewsContainerProps {
 
 export const NewsContainer: FC<NewsContainerProps> = ({ news, isMargin, withContent, isBig, isImage }) => {
     return (
-        <div className={ isMargin ? classes.newsComponentWithMargin : classes.newsComponent }>
+        <div className={ isMargin ? classes.newsComponentWithMargin : classes.newsComponent } >
             {isImage && 
                 <img className={isBig ? classes.imageContainerRecentNewsBig : classes.imageContainerRecentNews} src={news.image} alt="nana" />
             }
