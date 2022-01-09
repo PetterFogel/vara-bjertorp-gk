@@ -5,6 +5,7 @@ import { SingleNews } from "./assets/types";
 import { NewsContainer } from "./components/NewsContainer";
 import Divider from "../../UI/divider/Divider";
 import { Modal } from "../../UI/modal/Modal";
+import { Contact } from "../../UI/contact/Contact";
 
 const News: FC = () => {
   const postsArray = posts.news
@@ -23,20 +24,31 @@ const News: FC = () => {
 
   return(
     <section>
-      {isOpen && <Modal onClose={() => setIsOpen(!isOpen)} image={singlePost.image} headline={singlePost.title} isOpen={isOpen} closeText={'Avbryt'} description={singlePost.content}/>}
+      {isOpen && 
+        <Modal 
+          onClose={() => setIsOpen(!isOpen)} 
+          image={singlePost.image}
+          headline={singlePost.title}
+          isOpen={isOpen} closeText={'Avbryt'}
+          description={singlePost.content}
+        >
+          <Contact />
+        </Modal>
+      }
       <div className={classes.newsContainer}>
         <div className={classes.recentNewsContainer}>
           <div className={classes.image}>
             <h2 className={classes.title}>Nyheter</h2>
           </div>
           <div className={classes.mappedValuesContainer}>
-            <div className={classes.lastPostContainer} onClick={() => handleNewsClick(lastPost)}>
+            <div className={classes.lastPostContainer}>
               <NewsContainer withContent isBig isImage news={lastPost}/>
             </div>
             <div className={classes.oldPostContainer}>
               {allButLast.map((post: SingleNews) => (
-                <div onClick={() => handleNewsClick(post)}>
+                <div style={{marginBottom: "2rem"}}>
                   <NewsContainer withContent news={post} />
+                  <p className={classes.expandParagraph} onClick={() => handleNewsClick(post)}>Visa mer</p>
                 </div>
                 ))}
             </div>
@@ -47,8 +59,9 @@ const News: FC = () => {
         </section>
         <div className={classes.oldNewsContainer}>
           {latestOldPosts.map((post: SingleNews) => (
-            <div style={{width: '33%', margin: '0 2rem'}} onClick={() => handleNewsClick(post)}>
+            <div className={classes.mappedOldContainer}>
               <NewsContainer isMargin isImage news={post} />
+              <p className={classes.expandParagraph} onClick={() => handleNewsClick(post)}>Visa mer</p>
             </div>
           ))}
         </div>

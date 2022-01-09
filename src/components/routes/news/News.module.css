@@ -38,6 +38,7 @@
 }
 
 .lastPostContainer {
+  margin-bottom: 2rem;
 }
 
 .oldPostContainer {
@@ -63,10 +64,6 @@
   text-align: left;
 }
 
-.newsComponent {
-  margin-bottom: 3rem;
-}
-
 .newsComponentWithMargin {
   margin-bottom: 0;
   width: 100%;
@@ -86,4 +83,37 @@
 .imageContainerRecentNewsBig {
   width: 100%;
   max-height: 25rem;
+}
+
+.expandParagraph {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mappedOldContainer {
+  width: 33%;
+  margin: "0 2rem";
+}
+
+@media (max-width: 700px) {
+  .mappedValuesContainer {
+    flex-direction: column;
+  }
+  .oldPostContainer {
+    margin-left: 0;
+  }
+  .oldNewsContainer {
+    flex-direction: column;
+  }
+  .mappedOldContainer {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .mappedValuesContainer {
+    flex-direction: column;
+  }
 }
