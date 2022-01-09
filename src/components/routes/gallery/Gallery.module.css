@@ -1,0 +1,132 @@
+.galleryContainer {
+    padding: 7% 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 25rem;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.paragraph {
+    width: 75%;
+    color: #ffff;
+    align-self: center;
+    text-align: center;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    background-size: cover;
+}
+
+#imageOne {
+    background: url("../../../assets/DJI_0167_sign.jpg");
+    background-size: cover;
+}
+
+#imageTwo {
+    background: url("../../../assets/slottet-golfbana.jpg");
+    background-size: cover;
+}
+
+#imageThree {
+    background: url("../../../assets/DJI_0169_sign.jpg");
+    background-size: cover;
+}
+
+#imageFour {
+    background: url("../../../assets/DJI_0177_sign.jpg");
+    background-size: cover;
+}
+
+#imageFive {
+    background: url("../../../assets/Restaurangenombygg1.JPG");
+    background-size: cover;
+}
+
+#imageSix {
+    background: url("../../../assets/RestaurangOmbygg1.JPG");
+    background-size: cover;
+}
+
+#imageSeven {
+    background: url("../../../assets/IMG_4506.JPG");
+    background-size: cover;
+}
+
+#imageEight {
+    background: url("../../../assets/slottet.JPG");
+    background-size: cover;
+}
+
+@media (max-width:1024px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 80rem;
+        background-size: cover;
+    }
+
+    .imageContainer {
+        height: 40rem;
+        width: 90%;
+        margin: 2rem auto;
+        background-size: cover;
+    }
+
+    .title {
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width:500px) {
+
+    .container {
+        height: 50rem;
+        background-size: cover;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        margin: 1rem auto;
+        background-size: cover;
+        height: 20rem;
+    }
+
+    .infoContainer {
+        padding: 1rem;
+    }
+    
+    .paragraph {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+    }
+}
