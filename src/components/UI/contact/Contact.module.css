@@ -1,0 +1,8 @@
+.contactContainer {
+  display: flex;
+  margin: 0.3rem 0;
+}
+
+.paragraph {
+  margin-right: 0.5rem;
+}
