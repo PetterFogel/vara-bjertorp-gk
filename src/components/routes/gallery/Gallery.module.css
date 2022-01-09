@@ -24,18 +24,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75%;
-    color: #fff;
+    padding: 4rem;
 }
 
 .paragraph {
     width: 75%;
     color: #ffff;
     text-align: center;
-    padding: 4rem;
 }
 
-.imageContainerOne {
+.imageContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,4 +79,45 @@
 #imageEight {
     background: url("../../../assets/DJI_0169_sign.jpg");
     background-size: cover;
+}
+
+@media (max-width:1024px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 25rem;
+        background-size: cover;
+    }
+
+    .imageContainer {
+        width: 100%;
+        background-size: cover;
+    }
+}
+
+@media (max-width:500px) {
+
+    .container {
+        height: 25rem;
+        background-size: cover;
+    }
+
+    .imageContainer {
+        width: 100%;
+        background-size: cover;
+    }
+
+    .infoContainer {
+        padding: 2rem;
+    }
+    
+    .paragraph {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        margin-top: 4rem;
+    }
 }
