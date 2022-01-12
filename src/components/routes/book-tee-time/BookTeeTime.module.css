@@ -1,0 +1,187 @@
+.container {
+  padding: 0rem 2rem;
+  padding-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image {
+  background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
+    url("../../../assets/DJI_0169_sign.jpg");
+  background-size: cover;
+  object-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.infoContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.contentHolder {
+  margin: 3rem 0rem;
+}
+
+.paragraph {
+  color: #fff;
+  font-weight: 200;
+  line-height: 1.6;
+}
+
+.widgetPrototype {
+  background: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+}
+
+.greenfeeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.optionContainer {
+  flex: 1;
+}
+
+.optionBox {
+  border: 3px solid #ffff;
+  border-bottom: none;
+  color: #ffff;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.optionBox:last-child {
+  border-bottom: 3px solid #ffff;
+}
+
+.optionBlock {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.collaborationsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.collabTitle {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0rem;
+    padding-top: 12vh;
+  }
+
+  .image {
+    height: 88vh;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .infoContainer {
+    width: 90%;
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
+
+  .boldText {
+    font-size: 0.8rem;
+  }
+
+  .optionBox {
+    height: 4rem;
+    padding: 1rem 1rem;
+  }
+
+  .optionContainer {
+    margin: 1rem auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .image {
+    margin-bottom: 1rem;
+  }
+  .greenfeeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .optionContainer {
+    margin: 0rem;
+    width: 100%;
+  }
+
+  .contentHolder {
+    margin: 1.5rem 0rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .optionContainer {
+    width: 100%;
+  }
+
+  .optionBox {
+    border: 1px solid #ffff;
+    border-bottom: none;
+  }
+  .optionBox:last-child {
+    border-bottom: 1px solid #ffff;
+  }
+
+  #optionContainerBoldText {
+    font-size: 0.6rem;
+  }
+
+  #optionContainerparagraph {
+    font-size: 0.6rem;
+  }
+
+  .collabTitle {
+    font-size: 1.3rem;
+    /* text-align: center; */
+  }
+}
