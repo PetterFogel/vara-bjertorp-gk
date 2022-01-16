@@ -20,7 +20,9 @@ const News: FC = () => {
     const [singlePost, setSinglePost] = useState<any>();
 
     const fetchNews = async () => {
-        const news = await axios.get("api/posts");
+        const news = await axios.get(
+            `${process.env.REACT_APP_API_URL}api/posts`
+        );
         console.log(news.data);
     };
 
