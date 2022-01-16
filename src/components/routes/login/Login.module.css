@@ -35,7 +35,7 @@
     border-radius: .5rem;
     height: 3rem;
     width: 10rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #fff;
     border: 2px solid #ffff;
     background: #1ead74;
@@ -48,4 +48,32 @@
 .button:hover {
     background-color: #0f6140;
     transition: all .5s ease;
+}
+
+@media (max-width:1024px) {
+
+    .loginTitle {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .loginTitle {
+        font-size: 2rem;
+        margin-bottom: 0rem;
+    }
+    
+    .input {
+        height: 2.5rem;
+        width: 15rem;
+    }
+    
+    .button {
+        height: 2.5rem;
+        width: 10rem;
+        font-size: .9rem;
+    }
+
 }
