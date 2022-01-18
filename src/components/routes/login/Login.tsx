@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { FC, SyntheticEvent, useState } from "react";
 // import { Redirect } from "react-router";
 import classes from "./Login.module.css";
@@ -5,25 +6,40 @@ import classes from "./Login.module.css";
 const Login: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [redirect, setRedirect] = useState(false);
+  // const [redirect, setRedirect] = useState(false);
 
-  const submit = async (e: SyntheticEvent) => {
-    const response = await fetch("http://localhost:8000/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "Application/json" },
-      credentials: "include",
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+  // const submit = async (e: SyntheticEvent) => {
+  //   const response = await axios.post(
+  //     `${process.env.REACT_APP_API_URL}api/login`,
+  //     {
+  //       email: email,
+  //       password: password,
+  //     }
+  //   );
+  //   console.log(response);
 
-    setRedirect(true);
+  //   // setRedirect(true);
+  // };
+
+  const submit = async () => {
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_URL}api/login`,
+      {
+        headers: {
+          "content-type": "application/json",
+        },
+        data: {
+          email: email,
+          password: password,
+        },
+      }
+    );
+    console.log(response)
   };
 
-  if (redirect) {
-    // return <Redirect to="/"/>
-  }
+  // if (redirect) {
+  //   // return <Redirect to="/"/>
+  // }
 
   return (
     <section>
