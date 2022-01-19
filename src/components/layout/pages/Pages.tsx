@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
+import CreatePosts from "../../manage-create-posts/create-posts/CreatePosts";
 import BookTeeTime from "../../routes/book-tee-time/BookTeeTime";
 import Contest from "../../routes/contest/Contest";
 import Gallery from "../../routes/gallery/Gallery";
@@ -16,6 +17,7 @@ const Pages: FC = () => {
       <Route path="/tavling" element={<Contest />} />
       <Route path="/galleri" element={<Gallery />} />
       <Route path="/medlem" element={<Member />} />
+      <Route path="/create-posts" element={<CreatePosts />} />
     </Routes>
   );
 };
