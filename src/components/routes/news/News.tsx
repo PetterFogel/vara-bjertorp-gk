@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import classes from "./News.module.css";
 import posts from './assets/news.json'
 import { SingleNews } from "./assets/types";
@@ -6,6 +6,8 @@ import { NewsContainer } from "./components/NewsContainer";
 import Divider from "../../UI/divider/Divider";
 import { Modal } from "../../UI/modal/Modal";
 import { Contact } from "../../UI/contact/Contact";
+import axios from "axios";
+import { NewsMapper } from "./NewsMapper";
 
 const News: FC = () => {
   const postsArray = posts.news
@@ -15,57 +17,25 @@ const News: FC = () => {
   const latestPosts = postsArray.slice(Math.max(postsArray.length - 5, 0))
   const allButLast = latestPosts.slice(0, -1);
   const [isOpen, setIsOpen] = useState(false); 
-  const [singlePost, setSinglePost] = useState<any>();
+  const [posts, setPosts] = useState<any>();
 
-  const handleNewsClick = (post: SingleNews) => {
-    setSinglePost(post)
-    setIsOpen(true)
-  }
+  const fetchUsersfromDatabase = async () => {
+    try {
+        const response = await axios.get("/user");
+        const result = response.data
+    } catch (error) {
+        console.log(error) 
+    }
+};
+
+useEffect(() => {
+  fetchUsersfromDatabase()
+})
 
   return(
     <section>
-      {isOpen && 
-        <Modal 
-          onClose={() => setIsOpen(!isOpen)} 
-          image={singlePost.image}
-          headline={singlePost.title}
-          isOpen={isOpen} closeText={'Avbryt'}
-          description={singlePost.content}
-        >
-          <Contact />
-        </Modal>
-      }
-      <div className={classes.newsContainer}>
-        <div className={classes.recentNewsContainer}>
-          <div className={classes.image}>
-            <h2 className={classes.title}>Nyheter</h2>
-          </div>
-          <div className={classes.mappedValuesContainer}>
-            <div className={classes.lastPostContainer}>
-              <NewsContainer withContent isBig isImage news={lastPost}/>
-            </div>
-            <div className={classes.oldPostContainer}>
-              {allButLast.map((post: SingleNews) => (
-                <div style={{marginBottom: "2rem"}}>
-                  <NewsContainer withContent news={post} />
-                  <p className={classes.expandParagraph} onClick={() => handleNewsClick(post)}>Visa mer</p>
-                </div>
-                ))}
-            </div>
-          </div>
-        </div>
-        <section style={{marginBottom: '5rem'}}>
-          <Divider title={"Äldre nyheter"}></Divider>
-        </section>
-        <div className={classes.oldNewsContainer}>
-          {latestOldPosts.map((post: SingleNews) => (
-            <div className={classes.mappedOldContainer}>
-              <NewsContainer isMargin isImage news={post} />
-              <p className={classes.expandParagraph} onClick={() => handleNewsClick(post)}>Visa mer</p>
-            </div>
-          ))}
-        </div>
-      </div>
+
+      <NewsMapper newsList={} />
     </section>
   );
 };
