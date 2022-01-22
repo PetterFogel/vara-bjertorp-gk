@@ -1,10 +1,6 @@
 import { Component, createContext } from "react";
 import axios from "axios";
 
-export interface SessionUser {
-  email: string;
-}
-
 interface State {
   emailLogin: string;
   passwordLogin: string;
@@ -38,7 +34,6 @@ class AdminProvider extends Component<{}, State> {
   handleEmailLoginInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ emailLogin: event.target.value });
   };
-
   handlePasswordLoginInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ passwordLogin: event.target.value });
   };
@@ -70,7 +65,7 @@ class AdminProvider extends Component<{}, State> {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   render() {
     return (
