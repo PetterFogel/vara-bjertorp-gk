@@ -11,17 +11,19 @@ export interface Admin {
 export interface Options {
   login: () => void;
   logout: () => void;
+  isLoggedIn: boolean;
 }
 
 export const AdminContext = createContext<Options>({
   login: () => {},
   logout: () => {},
+  isLoggedIn: false,
 });
 
 const AdminProvider: FC<{}> = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>();
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const history = useNavigate();
 
   const login = async () => {
@@ -57,6 +59,7 @@ const AdminProvider: FC<{}> = ({ children }) => {
   const ContextValue: Options = {
     login,
     logout,
+    isLoggedIn,
   };
 
   return (
