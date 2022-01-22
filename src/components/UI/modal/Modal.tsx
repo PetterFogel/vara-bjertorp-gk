@@ -3,20 +3,20 @@ import { ModalBody } from './ModalBody';
 import { ModalOverlay } from './ModalOverlay';
 
 export interface ModalProps {
-    headline?: string;
+    title?: string;
     isOpen?: boolean;
     onClose: () => void;
     closeText?: string;
-    description?: string;
+    text?: string;
     image?: string;
 }
 
-export const Modal: FC<ModalProps> = ({ isOpen, children, headline, onClose, closeText, description, image }) => {
+export const Modal: FC<ModalProps> = ({ isOpen, children, title, onClose, closeText, text, image }) => {
     if (isOpen) {
         return (
             <>
                 <ModalOverlay onClose={onClose} />
-                <ModalBody headline={headline} onClose={onClose} closeText={closeText} description={description} image={image}>
+                <ModalBody title={title} onClose={onClose} closeText={closeText} text={text} image={image}>
                     {children}
                 </ModalBody>
             </>

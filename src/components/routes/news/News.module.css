@@ -39,10 +39,11 @@
 
 .lastPostContainer {
   margin-bottom: 2rem;
+  width: 60%;
 }
 
 .oldPostContainer {
-  width: 100%;
+  width: 40%;
   margin-left: 5rem;
 }
 

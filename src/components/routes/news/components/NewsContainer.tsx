@@ -1,5 +1,4 @@
-import React, { FC, useState } from "react";
-import { Modal } from "../../../UI/modal/Modal";
+import React, { FC } from "react";
 import { SingleNews } from "../assets/types";
 import classes from "../News.module.css";
 
@@ -19,7 +18,7 @@ export const NewsContainer: FC<NewsContainerProps> = ({ news, isMargin, withCont
             }
             <h2 className={classes.newsTitle}>{news.title}</h2>
             {withContent &&
-                <p className={classes.newsContent}>{news.content}</p>
+                <p className={classes.newsContent}>{news.text}</p>
             }
             <p className={classes.newsDate}>{`Publicerad ${news.date}`}</p>
         </div>

@@ -7,6 +7,7 @@ import Divider from "../../UI/divider/Divider";
 import { Modal } from "../../UI/modal/Modal";
 import { Contact } from "../../UI/contact/Contact";
 import axios from "axios";
+import { NewsMapper } from "./NewsMapper";
 
 const News: FC = () => {
     const postsArray = posts.news;
@@ -15,84 +16,38 @@ const News: FC = () => {
     const latestOldPosts = oldPosts.slice(Math.max(oldPosts.length - 3, 0));
     const latestPosts = postsArray.slice(Math.max(postsArray.length - 5, 0));
     const allButLast = latestPosts.slice(0, -1);
-    const [isOpen, setIsOpen] = useState(false);
-    const [singlePost, setSinglePost] = useState<any>();
+    const [error, setError] = useState<any>(); 
+    const [news, setNews] = useState<SingleNews[]>();
+    // const user = {
+    //   email: "oliverjohansson3@gmail.com",
+    //   password: "Freak219"
+    // }
 
     const fetchNews = async () => {
-        const news = await axios.get(
-            `${process.env.REACT_APP_API_URL}api/posts`
+      try {
+        const request = await axios.get(
+          `${process.env.REACT_APP_API_URL}api/posts`
         );
-        console.log(news.data);
+        // const response = await axios.post(
+        //   `${process.env.REACT_APP_API_URL}api/login?email=${user.email}&password=${user.password}`,
+        // );
+        // console.log(response.data);
+
+        setNews(request.data);  
+      } catch (error) {
+        setError(error)
+      }
     };
 
     useEffect(() => {
         fetchNews();
-    });
-
-    const handleNewsClick = (post: SingleNews) => {
-        setSinglePost(post);
-        setIsOpen(true);
-    };
+    }, []);
 
     return (
         <section>
-            {isOpen && (
-                <Modal
-                    onClose={() => setIsOpen(!isOpen)}
-                    image={singlePost.image}
-                    headline={singlePost.title}
-                    isOpen={isOpen}
-                    closeText={"Avbryt"}
-                    description={singlePost.content}
-                >
-                    <Contact />
-                </Modal>
-            )}
             <div className={classes.newsContainer}>
-                <div className={classes.recentNewsContainer}>
-                    <div className={classes.image}>
-                        <h2 className={classes.title}>Nyheter</h2>
-                    </div>
-                    <div className={classes.mappedValuesContainer}>
-                        <div className={classes.lastPostContainer}>
-                            <NewsContainer
-                                withContent
-                                isBig
-                                isImage
-                                news={lastPost}
-                            />
-                        </div>
-                        <div className={classes.oldPostContainer}>
-                            {allButLast.map((post: SingleNews) => (
-                                <div style={{ marginBottom: "2rem" }}>
-                                    <NewsContainer withContent news={post} />
-                                    <p
-                                        className={classes.expandParagraph}
-                                        onClick={() => handleNewsClick(post)}
-                                    >
-                                        Visa mer
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <section style={{ marginBottom: "5rem" }}>
-                    <Divider title={"Äldre nyheter"}></Divider>
-                </section>
-                <div className={classes.oldNewsContainer}>
-                    {latestOldPosts.map((post: SingleNews) => (
-                        <div className={classes.mappedOldContainer}>
-                            <NewsContainer isMargin isImage news={post} />
-                            <p
-                                className={classes.expandParagraph}
-                                onClick={() => handleNewsClick(post)}
-                            >
-                                Visa mer
-                            </p>
-                        </div>
-                    ))}
-                </div>
+              {news && <NewsMapper newsList={news}/>}
+              {error && <p>Något gick fel</p>}
             </div>
         </section>
     );
