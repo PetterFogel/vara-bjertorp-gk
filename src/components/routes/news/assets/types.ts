@@ -1,6 +1,6 @@
 export interface SingleNews {
     title: string, 
-    content: string, 
+    text: string, 
     date: string, 
     image: string,
 }
