@@ -5,6 +5,7 @@ import BookTeeTime from "../../routes/book-tee-time/BookTeeTime";
 import Contest from "../../routes/contest/Contest";
 import Gallery from "../../routes/gallery/Gallery";
 import Home from "../../routes/home/Home";
+import Login from "../../routes/login/Login";
 import Member from "../../routes/member/Member";
 import News from "../../routes/news/News";
 
@@ -17,6 +18,7 @@ const Pages: FC = () => {
       <Route path="/tavling" element={<Contest />} />
       <Route path="/galleri" element={<Gallery />} />
       <Route path="/medlem" element={<Member />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/create-posts" element={<CreatePosts />} />
     </Routes>
   );
