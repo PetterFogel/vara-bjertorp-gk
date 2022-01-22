@@ -1,36 +1,63 @@
-import React, { FC, SyntheticEvent, useContext, useState } from "react";
+import React, {
+  ChangeEvent,
+  FC,
+  SyntheticEvent,
+  useContext,
+  useState,
+} from "react";
+import { useNavigate } from "react-router-dom";
 import { AdminContext } from "../../Contexts/adminContext";
 import classes from "./Login.module.css";
 
 const Login: FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const adminContext = useContext(AdminContext);
+  const {
+    handleEmailLogin,
+    handlePasswordLogin,
+    loginRequest,
+    loginError,
+    errorTxt,
+  } = useContext(AdminContext);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const history = useNavigate();
 
-  const userObject = {
-    email: email,
-    password: password,
-  }
+  const handleEmailInput = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === "") {
+      setEmailError("Field cannot be empty");
+    } else {
+      setEmailError("");
+      handleEmailLogin(e);
+    }
+  };
 
-  const submit = (e: SyntheticEvent) => {
+  const handlePasswordInput = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === "") {
+      setPasswordError("Field cannot be empty");
+    } else {
+      setPasswordError("");
+      handlePasswordLogin(e);
+    }
+  };
+
+  const handleLoginClick = async (e: SyntheticEvent) => {
     e.preventDefault();
-    adminContext.login(userObject);
-  }
+    const loggedIn = await loginRequest();
+    if (loggedIn) {
+      history("/nyheter");
+    }
+  };
 
   return (
     <section>
       <div className={classes.mainContainer}>
-        <form onSubmit={submit} className={classes.inputContainer}>
+        <form className={classes.inputContainer}>
           <h2 className={classes.loginTitle}>Logga in</h2>
           <input
             required
             type="email"
             placeholder="E-mail..."
             className={classes.input}
-            value={email}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEmail(e.target.value)
-            }
+            onChange={handleEmailInput}
           />
 
           <input
@@ -38,12 +65,16 @@ const Login: FC = () => {
             type="password"
             placeholder="Lösenonord..."
             className={classes.input}
-            value={password}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPassword(e.target.value)
-            }
+            onChange={handlePasswordInput}
           />
-          <button type="submit" className={classes.button}>
+          {loginError ? (
+            <div style={{marginTop: "1rem"}}>
+              <p style={{ color: "#ff1f5a" }}>{errorTxt}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+          <button onClick={handleLoginClick} className={classes.button}>
             Logga in
           </button>
         </form>
