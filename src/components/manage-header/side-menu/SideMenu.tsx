@@ -1,7 +1,8 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import classes from "./SideMenu.module.css";
 import MenuItem from "../menu-Item/MenuItem";
+import { AdminContext } from "../../Contexts/adminContext";
 
 interface SideMenuProps {
   onToggleMenuChange: () => void;
@@ -13,6 +14,8 @@ const SideMenu: FC<SideMenuProps> = ({
   isOpen,
 }: SideMenuProps) => {
   const currentClass = isOpen ? classes.sideMenuIn : classes.sideMenuOut;
+
+  const context = useContext(AdminContext);
 
   return (
     <div className={currentClass}>
@@ -48,11 +51,19 @@ const SideMenu: FC<SideMenuProps> = ({
           url="/medlem"
           onToggleMenuChange={onToggleMenuChange}
         />
-        <MenuItem
-          title="Logga in"
-          url="/login"
-          onToggleMenuChange={onToggleMenuChange}
-        />
+        {context.isLoggedIn === false ? (
+          <MenuItem
+            title="Logga in"
+            url="/login"
+            onToggleMenuChange={onToggleMenuChange}
+          />
+        ) : (
+          <MenuItem
+            title="Logga ut"
+            url="/"
+            onToggleMenuChange={context.logoutRequest}
+          />
+        )}
       </ul>
     </div>
   );

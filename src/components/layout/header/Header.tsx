@@ -1,8 +1,9 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import classes from "./Header.module.css";
 import logoImg from "../../../assets/small-logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { MdCreate } from "react-icons/md";
+import { AdminContext } from "../../Contexts/adminContext";
 
 interface HeaderProps {
   onToggleMenuChange: () => void;
@@ -11,6 +12,8 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ onToggleMenuChange }: HeaderProps) => {
   const [offset, setOffset] = useState(0);
   const navigate = useNavigate();
+
+  const context = useContext(AdminContext);
 
   useEffect(() => {
     window.onscroll = () => {
@@ -36,11 +39,15 @@ const Header: FC<HeaderProps> = ({ onToggleMenuChange }: HeaderProps) => {
         </div>
       </Link>
       <nav className={classes.nav}>
-        <MdCreate
-          className={classes.postIcon}
-          size={30}
-          onClick={() => navigate("/create-posts")}
-        />
+        {context.isLoggedIn === true ? (
+          <MdCreate
+            className={classes.postIcon}
+            size={30}
+            onClick={() => navigate("/create-posts")}
+          />
+        ) : (
+          <></>
+        )}
         <div className={classes.burgerMenu} onClick={onToggleMenuChange}>
           <div></div>
           <div></div>
