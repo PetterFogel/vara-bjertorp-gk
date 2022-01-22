@@ -41,7 +41,7 @@ const Header: FC<HeaderProps> = ({ onToggleMenuChange }: HeaderProps) => {
       <nav className={classes.nav}>
         {context.isLoggedIn === true ? (
           <>
-            <p style={{ marginRight: "1rem", color: "#1ead74" }}>
+            <p className={classes.admin}>
               {context.emailLogin}
             </p>
             <MdCreate

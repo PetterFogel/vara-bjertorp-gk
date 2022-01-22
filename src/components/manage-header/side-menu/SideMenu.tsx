@@ -14,7 +14,6 @@ const SideMenu: FC<SideMenuProps> = ({
   isOpen,
 }: SideMenuProps) => {
   const currentClass = isOpen ? classes.sideMenuIn : classes.sideMenuOut;
-
   const context = useContext(AdminContext);
 
   return (
@@ -51,7 +50,7 @@ const SideMenu: FC<SideMenuProps> = ({
           url="/medlem"
           onToggleMenuChange={onToggleMenuChange}
         />
-        {context.isLoggedIn === false ? (
+        {!context.isLoggedIn ? (
           <MenuItem
             title="Logga in"
             url="/login"
