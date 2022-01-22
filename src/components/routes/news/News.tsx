@@ -16,27 +16,27 @@ const News: FC = () => {
     const latestOldPosts = oldPosts.slice(Math.max(oldPosts.length - 3, 0));
     const latestPosts = postsArray.slice(Math.max(postsArray.length - 5, 0));
     const allButLast = latestPosts.slice(0, -1);
-    const [error, setError] = useState<any>(); 
+    const [error, setError] = useState<any>();
     const [news, setNews] = useState<SingleNews[]>();
-    // const user = {
-    //   email: "oliverjohansson3@gmail.com",
-    //   password: "Freak219"
-    // }
+    const user = {
+        email: "oliverjohansson3@gmail.com",
+        password: "Freak219",
+    };
 
     const fetchNews = async () => {
-      try {
-        const request = await axios.get(
-          `${process.env.REACT_APP_API_URL}api/posts`
-        );
-        // const response = await axios.post(
-        //   `${process.env.REACT_APP_API_URL}api/login?email=${user.email}&password=${user.password}`,
-        // );
-        // console.log(response.data);
+        try {
+            const request = await axios.get(
+                `${process.env.REACT_APP_API_URL}api/posts`
+            );
+            const response = await axios.post(
+                `${process.env.REACT_APP_API_URL}api/login?email=${user.email}&password=${user.password}`
+            );
+            console.log(response.data);
 
-        setNews(request.data);  
-      } catch (error) {
-        setError(error)
-      }
+            setNews(request.data);
+        } catch (error) {
+            setError(error);
+        }
     };
 
     useEffect(() => {
@@ -46,8 +46,8 @@ const News: FC = () => {
     return (
         <section>
             <div className={classes.newsContainer}>
-              {news && <NewsMapper newsList={news}/>}
-              {error && <p>Något gick fel</p>}
+                {news && <NewsMapper newsList={news} />}
+                {error && <p>Något gick fel</p>}
             </div>
         </section>
     );
