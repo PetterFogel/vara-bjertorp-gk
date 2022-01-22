@@ -1,11 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import classes from "./News.module.css";
-import posts from "./assets/news.json";
 import { SingleNews } from "./assets/types";
-import { NewsContainer } from "./components/NewsContainer";
-import Divider from "../../UI/divider/Divider";
-import { Modal } from "../../UI/modal/Modal";
-import { Contact } from "../../UI/contact/Contact";
 import axios from "axios";
 import { NewsMapper } from "./NewsMapper";
 
