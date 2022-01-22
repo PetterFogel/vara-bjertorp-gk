@@ -40,11 +40,16 @@ const Header: FC<HeaderProps> = ({ onToggleMenuChange }: HeaderProps) => {
       </Link>
       <nav className={classes.nav}>
         {context.isLoggedIn === true ? (
-          <MdCreate
-            className={classes.postIcon}
-            size={30}
-            onClick={() => navigate("/create-posts")}
-          />
+          <>
+            <p style={{ marginRight: "1rem", color: "#1ead74" }}>
+              {context.emailLogin}
+            </p>
+            <MdCreate
+              className={classes.postIcon}
+              size={30}
+              onClick={() => navigate("/create-posts")}
+            />
+          </>
         ) : (
           <></>
         )}
