@@ -8,28 +8,18 @@ const Login: FC = () => {
   const [password, setPassword] = useState("");
   const history = useNavigate();
 
-  const userObject = {
-    email: email, 
-    password: password
-  }
+  console.log(email, password);
 
-  const submit = async (userObject: Object) => {
+  const submit = async (e: SyntheticEvent) => {
+    e.preventDefault(); 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}api/Login`,
-        userObject,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        `${process.env.REACT_APP_API_URL}api/login?email=${email}&password=${password}`
       );
-      console.log(response);
-      history("/");
+      history("/nyheter");
     } catch (error) {
-      console.log(error);
       <div>
-        <p>Den angav fel E-postadress eller lösenord</p>
+        <p>Du angav fel E-postadress eller lösenord</p>
       </div>;
     }
   };
@@ -37,7 +27,7 @@ const Login: FC = () => {
   return (
     <section>
       <div className={classes.mainContainer}>
-        <form className={classes.inputContainer}>
+        <form onSubmit={submit} className={classes.inputContainer}>
           <h2 className={classes.loginTitle}>Logga in</h2>
           <input
             required
@@ -60,7 +50,9 @@ const Login: FC = () => {
               setPassword(e.target.value)
             }
           />
-          <button onClick={submit} className={classes.button}>Logga in</button>
+          <button type="submit" className={classes.button}>
+            Logga in
+          </button>
         </form>
       </div>
     </section>
