@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { FC, SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { Redirect } from "react-router";
 import classes from "./Login.module.css";
 
 const Login: FC = () => {
@@ -9,34 +8,36 @@ const Login: FC = () => {
   const [password, setPassword] = useState("");
   const history = useNavigate();
 
-  const submit = async () => {
+  const userObject = {
+    email: email, 
+    password: password
+  }
+
+  const submit = async (userObject: Object) => {
     try {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/Login`,
-      {
-        data: {
-          email: email,
-          password: password,
-        },
-      },
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        },
-      }
-    );
-    console.log(response.data);
-    history('/');
-    }
-    catch(error){
-      console.log(error)
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}api/Login`,
+        userObject,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response);
+      history("/");
+    } catch (error) {
+      console.log(error);
+      <div>
+        <p>Den angav fel E-postadress eller lösenord</p>
+      </div>;
     }
   };
 
   return (
     <section>
       <div className={classes.mainContainer}>
-        <form onSubmit={submit} className={classes.inputContainer}>
+        <form className={classes.inputContainer}>
           <h2 className={classes.loginTitle}>Logga in</h2>
           <input
             required
@@ -59,9 +60,7 @@ const Login: FC = () => {
               setPassword(e.target.value)
             }
           />
-          <button className={classes.button}>
-            Logga in
-          </button>
+          <button onClick={submit} className={classes.button}>Logga in</button>
         </form>
       </div>
     </section>

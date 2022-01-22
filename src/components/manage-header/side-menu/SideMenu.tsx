@@ -48,6 +48,11 @@ const SideMenu: FC<SideMenuProps> = ({
           url="/medlem"
           onToggleMenuChange={onToggleMenuChange}
         />
+        <MenuItem
+          title="Logga in"
+          url="/login"
+          onToggleMenuChange={onToggleMenuChange}
+        />
       </ul>
     </div>
   );
