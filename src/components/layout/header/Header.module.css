@@ -37,6 +37,16 @@
   font-size: 1.5rem;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.postIcon {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
 .burgerMenu {
   cursor: pointer;
 }
