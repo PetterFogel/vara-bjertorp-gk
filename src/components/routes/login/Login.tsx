@@ -1,28 +1,21 @@
-import axios from "axios";
-import React, { FC, SyntheticEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { FC, SyntheticEvent, useContext, useState } from "react";
+import { AdminContext } from "../../Contexts/adminContext";
 import classes from "./Login.module.css";
 
 const Login: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useNavigate();
+  const adminContext = useContext(AdminContext);
 
-  console.log(email, password);
+  const userObject = {
+    email: email,
+    password: password,
+  }
 
-  const submit = async (e: SyntheticEvent) => {
-    e.preventDefault(); 
-    try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}api/login?email=${email}&password=${password}`
-      );
-      history("/nyheter");
-    } catch (error) {
-      <div>
-        <p>Du angav fel E-postadress eller lösenord</p>
-      </div>;
-    }
-  };
+  const submit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    adminContext.login(userObject);
+  }
 
   return (
     <section>

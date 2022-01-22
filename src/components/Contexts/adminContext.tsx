@@ -1,15 +1,21 @@
 import axios from "axios";
-import React, { createContext, FC, useState } from "react";
+import { responseInterceptor } from "http-proxy-middleware";
+import React, {
+  createContext,
+  FC,
+  SyntheticEvent,
+  useContext,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 
 export interface Admin {
-  id: string;
   email: string;
   password: string;
 }
 
 export interface Options {
-  login: () => void;
+  login: (userObject: Admin) => void;
   logout: () => void;
 }
 
@@ -19,33 +25,28 @@ export const AdminContext = createContext<Options>({
 });
 
 const AdminProvider: FC<{}> = ({ children }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<unknown>();
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>();
   const history = useNavigate();
 
-  const login = async () => {
+  const userObject = {
+    email: email,
+    password: password,
+  }
+
+  const login = async (userObject: Admin) => {
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}api/Login`,
-        {
-          data: {
-            email: email,
-            password: password,
-          },
-        },
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-          },
-        }
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}api/login?email=${email}&password=${password}`
       );
-      console.log(response.data);
-      history("/");
+      history("/nyheter");
+      setIsLoggedIn(true);
     } catch (error) {
-      console.log(error);
+      setError(error);
       <div>
-        <p>Den angav fel E-postadress eller lösenord</p>
+        <p>Du angav fel E-postadress eller lösenord</p>
       </div>;
     }
   };
