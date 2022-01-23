@@ -60,7 +60,7 @@ class AdminProvider extends Component<{}, State> {
 
   handleLogoutRequest = async () => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}api/logout`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}api/login`);
       this.setState({ isLoggedIn: false });
     } catch (error) {
       console.log(error);
