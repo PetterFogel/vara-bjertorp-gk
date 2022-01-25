@@ -1,14 +1,14 @@
 import { FC } from "react";
 import Divider from "../../UI/divider/Divider";
+import IntroContainer from "../../UI/intro-container/IntroContainer";
 import classes from "./BookTeeTime.module.css";
+import image from "../../../assets/DJI_0169_sign.jpg";
 
 const BookTeeTime: FC = () => {
   return (
     <section>
       <div className={classes.container}>
-        <div className={classes.image}>
-          <h2 className={classes.title}>Boka Starttid</h2>
-        </div>
+        <IntroContainer title="Boka Starttid" imageUrl={image} />
         <div className={classes.infoContainer}>
           <div className={classes.contentHolder}>
             <p className={classes.paragraph}>

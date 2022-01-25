@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 import Divider from "../../UI/divider/Divider";
+import IntroContainer from "../../UI/intro-container/IntroContainer";
 import classes from "./Contest.module.css";
+import image from "../../../assets/slottet-golfbana.jpg";
 
 const Contest: FC = () => {
   return (
     <section>
       <div className={classes.contestContainer}>
-        <div className={classes.image}>
-          <h2 className={classes.title}>Tävling</h2>
-        </div>
+        <IntroContainer title="Tävling" imageUrl={image} />
         <div className={classes.infoContainer}>
           <p className={classes.paragraph}>
             2015 var fjärde året i rad som vi anordnade vår omtyckta Stenhaga
