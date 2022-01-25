@@ -1,60 +1,40 @@
 .memberContainer {
-    padding: 7% 2.2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
+  padding: 0rem 2rem;
+  padding-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.image {
-    background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
-    url("../../../assets/DJI_0177_sign.jpg");
-    background-size: cover;
-    object-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 75vh;
-    width: 100%;
-    margin-bottom: 3rem;
-}
-
-.title {
-    font-size: 2.5rem;
-    color: #fff;
-    text-align: center;
-}
-
-.infoContainer{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+.infoContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
 .paragraph {
-    color: #fff;
-    font-weight: 200;
-    line-height: 1.6;
+  color: #fff;
+  font-weight: 200;
+  line-height: 1.6;
 }
 
 .boldText {
-    font-weight: bolder;
-    color: #fff;
-    line-height: 1.6;
-    font-size: 1rem;
+  font-weight: bolder;
+  color: #fff;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 .link {
-    color: #1ead74;
-    text-decoration: none;
+  color: #1ead74;
+  text-decoration: none;
 }
 
 .list {
-    color: #1ead74;
-    text-decoration: underline;
-    margin: 0rem 0rem 5rem 1rem;
+  color: #1ead74;
+  text-decoration: underline;
+  margin: 0rem 0rem 5rem 1rem;
 }
 
 .optionContainer {
@@ -63,95 +43,99 @@
 }
 
 .optionBox {
-    border: 3px solid #ffff;
-    border-bottom: none;
-    color: #ffff;
-    padding: 1rem 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  border: 3px solid #ffff;
+  border-bottom: none;
+  color: #ffff;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .optionBox:last-child {
-    border-bottom: 3px solid #ffff;
+  border-bottom: 3px solid #ffff;
 }
 
 .optionBlock {
-    width: 25%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .memberContainer {
+    padding: 0rem 0rem;
+    padding-top: 12vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+  }
+
+  .image {
+    background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
+      url("../../../assets/DJI_0177_sign.jpg");
+    background-size: cover;
+    object-position: center;
+    height: 50vh;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-top: 4.5rem;
+  }
+
+  .infoContainer {
+    width: 90%;
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
+
+  .boldText {
+    font-size: 0.8rem;
+  }
+
+  .optionBox {
+    height: 4rem;
+    padding: 1rem 1rem;
+  }
+
+  .optionContainer {
+    margin: 1rem auto;
+    width: 90%;
+  }
 }
 
+@media (max-width: 500px) {
+  .image {
+    height: 20vh;
+    background: none;
+    margin-bottom: 0rem;
+  }
 
-@media (max-width:1024px) {
+  .title {
+    font-size: 1.6rem;
+  }
 
-    .image {
-        background: linear-gradient(rgba(39, 50, 54, 0.3), rgba(39, 50, 54, 0.3)),
-        url("../../../assets/DJI_0177_sign.jpg");
-        background-size: cover;
-        object-position: center;
-        height: 50vh;
-    }
+  .optionContainer {
+    width: 95%;
+  }
 
-    .title {
-        font-size: 2.5rem;
-        margin-top: 4.5rem;
-    }
+  .optionBox {
+    border: 1px solid #ffff;
+    border-bottom: none;
+  }
+  .optionBox:last-child {
+    border-bottom: 1px solid #ffff;
+  }
 
-    .infoContainer{
-        width: 90%;
-    }
+  #optionContainerBoldText {
+    font-size: 0.6rem;
+  }
 
-    .paragraph {
-        font-size: .8rem;
-    }
-    
-    .boldText {
-        font-size: .8rem;
-    }
-
-    .optionBox {
-        height: 4rem;
-        padding: 1rem 1rem;
-    }
-
-    .optionContainer {
-        margin: 1rem auto;
-        width: 90%;
-    }
-}
-
-
-@media (max-width:500px) {
-
-    .image {
-        height: 20vh;
-        background: none;
-        margin-bottom: 0rem;
-    }
-
-    .title {
-        font-size: 1.6rem;
-    }
-
-    .optionContainer {
-        width: 95%;
-    }
-
-    .optionBox {
-        border: 1px solid #ffff;
-        border-bottom: none;
-    }
-    .optionBox:last-child {
-        border-bottom: 1px solid #ffff;
-    }
-
-    #optionContainerBoldText {
-        font-size: .6rem;
-    }
-
-    #optionContainerparagraph {
-        font-size: .6rem;
-    }
+  #optionContainerparagraph {
+    font-size: 0.6rem;
+  }
 }
